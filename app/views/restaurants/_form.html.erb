@@ -1,3 +1,4 @@
+
 <%= form_with(model: restaurant, local: true) do |form| %>
   <% if restaurant.errors.any? %>
     <div id="error_explanation">
@@ -9,24 +10,36 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+<div class="w-50">
+    <div class="form-group">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="form-group">
+        <%= form.label :address %>
+        <%= form.text_field :address, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :stars %>
-    <%= form.number_field :stars %>
-  </div>
+      <div class="form-group">
+        <%= form.label :phone_number %>
+        <%= form.phone_field :phone_number, class: 'form-control' %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="form-group">
+        <%= form.label :category %>
+        <%= form.select :category,["chinese", "italian", "japanese", "french", "belgian"], prompt: "Select restaurant cousin", class: 'form-control' %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= form.button :submit, class: "btn btn-primary"%>
+    </div>
+
   </div>
 <% end %>
+

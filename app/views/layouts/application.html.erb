@@ -13,6 +13,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container my-5">
+        <p> <% link_to 'Restaurants', restaurants_path, class: "nav-link" %></p>
+
+
+
+          <p><% link_to 'Add new restaurant', new_restaurant_path, class: "nav-link" %></p>
+
+      <%= yield %>
+
+      </div>
   </body>
 </html>
